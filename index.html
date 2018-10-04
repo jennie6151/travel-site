@@ -34,7 +34,7 @@
                 </section>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-8 col-sm-offset-2">
                     <div class="input-group stylish-input-group">
                         <input type="text" class="form-control" placeholder="Where in the world do you want to go?">
                         <span class="input-group-addon">
@@ -47,27 +47,34 @@
             </div>
         </div>
     </div>
-    <div id="googleMap"></div>
-
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div id="googleMap"></div>
+        </div>
+    </div>
     <script>
         function myMap() {
-            var mapLatLng = {lat:53.5228, lng:-1.1285};
-              
-            var map = new google.maps.Map(document.getElementById("googleMap"),{
+            var mapLatLng = { lat: 53.5228, lng: -1.1285 };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), {
                 zoom: 3,
                 center: mapLatLng
             });
-            
-        var marker = new google.maps.Marker({
-            position: mapLatLng,
-            map: map,
-            icon:"/assets/images/map-pin-blue.png"
-        });
-      }
-     
+
+            var marker = new google.maps.Marker({
+                position: mapLatLng,
+                map: map,
+                icon: "/assets/images/map-pin-blue.png"
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "Test infoWindow"
+            });
+            infowindow.open(map, marker);
+        }
     </script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=myMap"></script>
 
 
     <!-- Footer -->
