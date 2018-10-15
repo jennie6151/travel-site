@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wander with me | The travel planning tool</title>
-    <link href="https://fonts.googleapis.com/css?family=Kalam%7CRoboto" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="icon" href="/assets/images/world-atlas.png">
+    <link rel="icon" href="/assets/images/footprints-logo.png">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+
     <nav>
         <ul class="topnav">
-            <li><a class="active" href="index.html">Wander with me</a></li>
+            <li><a class="active" href="index.html"><img src="/assets/images/nav-bar-logo.png"></a></li>
             <li><a href="#news">Destination city</a></li>
             <li><a href="#contact">Tourist attractions</a></li>
             <li><a href="#news">Accomodation</a></li>
@@ -25,95 +25,34 @@
         </ul>
     </nav>
 
-    <div class="container-fluid callout-container ">
-        <div class="opaque-overlay ">&nbsp;</div>
-        <div class="row ">
-            <div class="col-xs-12 text-center">
-                <section class="callout jumbotron text-center">
-                    <h1>Wander with me...</h1>
-                </section>
-            </div>
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <div class="input-group stylish-input-group">
-                        <input type="text" class="form-control" placeholder="Where in the world do you want to go?" name="banana">
-                        <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                </div>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8-offset-2">
+                <h1>Wander with me</h1>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <div id="googleMap"></div>
+        <div class="row">
+            <div class="col-xs-12 col-md-8-offset-2">
+                <div id="googleMap"></div>
+            </div>
         </div>
-    </div>
-    <script>
-        var map;
-        var infowindow;
-
-        function createMap() {
-            var mapCenter = new google.maps.LatLng(51.508710, -0.075799);
-
-            map = new google.maps.Map(document.getElementById('googleMap'), {
-                zoom: 15,
-                center: mapCenter
-            });
-
-            infowindow = new google.maps.InfoWindow();
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch({
-                location: mapCenter,
-                type: ['airport, amusement_park, aquarium, art_gallery, bar, bowling_alley, bus_station, cafe, campground, car_rental, casino, cemetery, church, city_hall, courthouse, embassy, hindu_temple, library, mosque, movie_theater, museum, night_club, park, restaurant, rv_park, shopping_mall, spa, stadium, subway_station, synagogue, taxi_stand, train_station, transit_station, zoo'],
-                radius: '1000'
-            }, processSearchResults);
-        }
-
-        function processSearchResults(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                }
-            }
-        }
-
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-            var marker = new google.maps.Marker({
-                map: map,
-                position: place.geometry.location,
-                icon: "/assets/images/map-pin-blue.png"
-            });
-
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
-            });
-        }
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=createMap"></script>
-
-
-    <!-- Footer -->
+    </section>
+    
+<!-- Footer -->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <p>
-                        2018 Copyright &#9400; Jennifer Dick</p>
+                <div class="col-xs-12">
+                    <p>2018 Copyright &#9400; Jennifer Dick</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer end -->
-
-
+<!-- Footer end -->
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=createMap"></script>
+    <script src="assets/js/maps.js"></script>
 </body>
 
 </html>
