@@ -55,7 +55,7 @@ resultsList.innerHTML = '';
 
             
             var li = document.createElement('li');
-            li.appendChild(document.createTextNode(place.name));
+            li.appendChild(document.createTextNode(place.name+' '+ place.formatted_address));
             resultsList.appendChild(li);
 
             if (place.geometry.viewport) {
