@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wander with me | The travel planning tool</title>
+    <title>Wanderfeet | The travel planning tool</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -29,15 +29,26 @@
     <section class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8-offset-2">
-                <h1>Wander with me</h1>
+                <h1>Wanderfeet... where will you go?</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-8-offset-2">
+                <input id="mapSearchInput" class="controls" type="text" placeholder="Go on.... name a place">
                 <div id="googleMap"></div>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="col-xs-12 col-md-8-offset-2">
+                <ul id="searchResults"></ul>
+            </div>
+        </div>
+        
     </section>
+    
+    
+    
     
 <!-- Footer -->
     <footer class="page-footer">
@@ -50,9 +61,10 @@
         </div>
     </footer>
 <!-- Footer end -->
-    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=createMap"></script>
+
     <script src="assets/js/maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=initAutocomplete"></script>
+   
 </body>
 
 </html>
