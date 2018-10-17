@@ -10,7 +10,7 @@ function initAutocomplete() {
 
     var input = document.getElementById('mapSearchInput');
     var searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.CENTER].push(input);
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -28,9 +28,9 @@ function initAutocomplete() {
             marker.setMap(null);
         });
         markers = [];
-        
-var resultsList = document.getElementById('searchResults');
-resultsList.innerHTML = '';
+
+        var resultsList = document.getElementById('searchResults');
+        resultsList.innerHTML = '';
 
         var bounds = new google.maps.LatLngBounds();
         places.forEach(function(place) {
@@ -53,10 +53,13 @@ resultsList.innerHTML = '';
                 position: place.geometry.location
             }));
 
-            
+
             var li = document.createElement('li');
-            li.appendChild(document.createTextNode(place.name+' '+ place.formatted_address+' '+ place.rating));
+            li.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address + ' ' + place.rating + ' ' + place.photo));
             resultsList.appendChild(li);
+
+           
+
 
             if (place.geometry.viewport) {
 
