@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderfeet | The travel planning tool</title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="icon" href="/assets/images/footprints-logo.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
 
     <nav>
         <ul class="topnav">
-            <li><a class="active" href="index.html"><img src="/assets/images/nav-bar-logo.png"></a></li>
+            <li><a class="active" href="index.html"><img src="/assets/images/nav-bar-logo.png" alt="Wanderfeet logo"></a></li>
             <li><a href="#news">Destination city</a></li>
             <li><a href="#contact">Tourist attractions</a></li>
             <li><a href="#news">Accomodation</a></li>
@@ -25,32 +25,39 @@
         </ul>
     </nav>
 
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="mainTitle">Where in the world will you go?</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!--<form action="/action_page.php">-->
+                        <div class="input-group">
+                            <input id="mapSearchInput" class="form-control" type="text" placeholder="Go on.... name a place" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                        </div>
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <section class="container">
+    <section>
+            <div id="googleMap"></div>
         <div class="row">
-            <div class="col-xs-12 col-md-8-offset-2">
-                <h1>Wanderfeet... where will you go?</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-md-8-offset-2">
-                <input id="mapSearchInput" class="controls" type="text" placeholder="Go on.... name a place">
-                <div id="googleMap"></div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-xs-12 col-md-8-offset-2">
+            <div class="col-xs-12 col-md-8">
                 <ul id="searchResults"></ul>
             </div>
         </div>
-        
+        </div>
     </section>
-    
-    
-    
-    
-<!-- Footer -->
+
+    <!-- Footer -->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -60,11 +67,11 @@
             </div>
         </div>
     </footer>
-<!-- Footer end -->
+    <!-- Footer end -->
 
     <script src="assets/js/maps.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=initAutocomplete"></script>
-   
+
 </body>
 
 </html>

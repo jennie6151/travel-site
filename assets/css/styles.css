@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #7789a0;
 }
 
-h1 {
-    font-family: 'Reenie Beanie', cursive;
+.header {
+    background-color: #66d7d1;
+    height: 300px;
+}
+
+.mainTitle {
+    font-size: 60px;
     text-align: center;
-    color: #ffffff !important;
-    text-shadow: 1px 1px grey;
+    padding: 20px;
 }
 
 /**---------------- Navbar ---------------**/
@@ -18,7 +21,8 @@ ul.topnav {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    background-color: #222729;
+    background-color: #2e3532;
+    margin-bottom: 0px;
 }
 
 ul.topnav li {
@@ -27,14 +31,14 @@ ul.topnav li {
 
 ul.topnav li a {
     display: block;
-    color: #ffffff;
+    color: #f0f0f0;
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 
 ul.topnav li a:hover:not(.active) {
-    color: #66cccc;
+    color: #66d7d1;
 }
 
 ul.topnav li.right {
@@ -48,24 +52,33 @@ ul.topnav li.right {
     }
 }
 
-#googleMap{
- width:100%;
- height:400px;
+#googleMap {
+    width: 100%;
+    height: 600px;
 }
 
-#mapSearchInput{
-    width: 50%;
-    height: 10%;
-    margin-top:10px;
-    border-color: #222729;
-    border-radius:5px;
+
+.form-control {
+    width: 80%;
+    height: 57px;
+    margin-top: 10px;
+    border-color: transparent;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: 30px;
+    vertical-align: middle;
 }
 
 ::placeholder {
-    color: #222729;
+    color: #2e3532;
     opacity: 1;
-    font-size:16px;
-    font-weight: bold;
+    font-size: 30px;
 }
 
 input:focus::-webkit-input-placeholder {
@@ -73,27 +86,26 @@ input:focus::-webkit-input-placeholder {
 }
 
 :-ms-input-placeholder {
-    color: #222729;
+    color: #2e3532;
     opacity: 1;
-    font-size:16px;
-    font-weight: bold;
+    font-size: 30px;
 }
 
 ::-ms-input-placeholder {
-    color: #222729;
+    color: #2e3532;
     opacity: 1;
-    font-size:16px;
-    font-weight: bold;
+    font-size: 30px;
 }
 
 
 /**---------------- Footer ---------------**/
+
 .page-footer {
-    background-color: #222729;
-    color: #66cccc;
+    background-color: #2e3532;
+    color: #66d7d1;
     min-height: 80px;
-    margin-top:40px;
-    padding-top:30px;
+    margin-top: -10px;
+    padding-top: 30px;
     text-align: center;
     left: 0;
     bottom: 0;

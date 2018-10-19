@@ -10,7 +10,7 @@ function initAutocomplete() {
 
     var input = document.getElementById('mapSearchInput');
     var searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+   
 
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -34,6 +34,7 @@ function initAutocomplete() {
 
         var bounds = new google.maps.LatLngBounds();
         places.forEach(function(place) {
+
             if (!place.geometry) {
                 console.log("Returned place contains no geometry");
                 return;
@@ -55,11 +56,8 @@ function initAutocomplete() {
 
 
             var li = document.createElement('li');
-            li.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address + ' ' + place.rating + ' ' + place.photo));
+            li.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address + ' ' + place.rating));
             resultsList.appendChild(li);
-
-           
-
 
             if (place.geometry.viewport) {
 
