@@ -12,7 +12,7 @@ function initAutocomplete() {
 
     var input = document.getElementById('mapSearchInput');
     searchBox = new google.maps.places.SearchBox(input);
-   
+
 
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -23,57 +23,60 @@ function initAutocomplete() {
 
 
 function getPlaces() {
-        var places = searchBox.getPlaces();
+    var places = searchBox.getPlaces();
 
-        if (places.length == 0) {
+    if (places.length == 0) {
+        return;
+    }
+
+    markers.forEach(function(marker) {
+        marker.setMap(null);
+    });
+
+    markers = [];
+
+    var resultsList = document.getElementById('searchResults');
+    resultsList.innerHTML = '';
+
+    var bounds = new google.maps.LatLngBounds();
+
+
+    places.forEach(function(place) {
+
+        if (!place.geometry) {
+            console.log("Returned place contains no geometry");
             return;
         }
+        var icon = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
 
-        markers.forEach(function(marker) {
-            marker.setMap(null);
-        });
-        markers = [];
-
-        var resultsList = document.getElementById('searchResults');
-        resultsList.innerHTML = '';
-
-        var bounds = new google.maps.LatLngBounds();
-        
-        
-        places.forEach(function(place) {
-
-            if (!place.geometry) {
-                console.log("Returned place contains no geometry");
-                return;
-            }
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25)
-            };
-
-            markers.push(new google.maps.Marker({
-                map: map,
-                icon: icon,
-                title: place.name,
-                position: place.geometry.location
-            }));
+        markers.push(new google.maps.Marker({
+            map: map,
+            icon: icon,
+            title: place.name,
+            position: place.geometry.location
+        }));
 
 
-            var li = document.createElement('li');
-            li.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address + ' ' + place.rating));
-            resultsList.appendChild(li);
+        var resultLink = document.createElement('a');
+        resultLink.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address));
+        resultLink.setAttribute('class', 'list-group-item');
+        resultLink.setAttribute('href', '#');
+        resultsList.appendChild(resultLink);
 
-            if (place.geometry.viewport) {
 
-                bounds.union(place.geometry.viewport);
-            }
-            else {
-                bounds.extend(place.geometry.location);
-            }
-        });
-       map.fitBounds(bounds);
-    }
-    
+        if (place.geometry.viewport) {
+
+            bounds.union(place.geometry.viewport);
+        }
+        else {
+            bounds.extend(place.geometry.location);
+        }
+    });
+    map.fitBounds(bounds);
+}

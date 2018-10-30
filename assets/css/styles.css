@@ -97,6 +97,12 @@ input:focus::-webkit-input-placeholder {
 }
 
 
+.placesResults{
+    margin:20px;
+    width: 97%;
+}
+
+
 /**---------------- Footer ---------------**/
 
 .page-footer {
