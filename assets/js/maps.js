@@ -55,12 +55,20 @@ function getPlaces() {
             scaledSize: new google.maps.Size(25, 25)
         };
 
-        markers.push(new google.maps.Marker({
+        var marker = new google.maps.Marker({
             map: map,
             icon: icon,
             title: place.name,
             position: place.geometry.location
-        }));
+        });
+
+     
+        marker.addListener('click', function() {
+          
+            openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
+        });
+        
+        markers.push(marker);
 
 
         var resultLink = document.createElement('a');
@@ -79,4 +87,17 @@ function getPlaces() {
         }
     });
     map.fitBounds(bounds);
+}
+
+var globalInfoWindow
+function openInfoWindow(map, marker, title){
+    
+    if(globalInfoWindow){globalInfoWindow.close()}
+    
+      globalInfoWindow = new google.maps.InfoWindow({
+            content: title
+        });
+        
+          globalInfoWindow.open(map, marker);
+        
 }
