@@ -62,12 +62,12 @@ function getPlaces() {
             position: place.geometry.location
         });
 
-     
+
         marker.addListener('click', function() {
-          
+
             openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
         });
-        
+
         markers.push(marker);
 
 
@@ -77,6 +77,12 @@ function getPlaces() {
         resultLink.setAttribute('href', '#');
         resultsList.appendChild(resultLink);
 
+        resultLink.onclick =function() {
+
+            openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
+            window.scrollTo(0,0);
+            return false;
+        }
 
         if (place.geometry.viewport) {
 
@@ -90,14 +96,15 @@ function getPlaces() {
 }
 
 var globalInfoWindow
-function openInfoWindow(map, marker, title){
-    
-    if(globalInfoWindow){globalInfoWindow.close()}
-    
-      globalInfoWindow = new google.maps.InfoWindow({
-            content: title
-        });
-        
-          globalInfoWindow.open(map, marker);
-        
+
+function openInfoWindow(map, marker, title) {
+
+    if (globalInfoWindow) { globalInfoWindow.close() }
+
+    globalInfoWindow = new google.maps.InfoWindow({
+        content: title
+    });
+
+    globalInfoWindow.open(map, marker);
+
 }
