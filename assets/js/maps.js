@@ -13,6 +13,12 @@ function initAutocomplete() {
     var input = document.getElementById('mapSearchInput');
     searchBox = new google.maps.places.SearchBox(input);
 
+    var clearButton = document.getElementById('clearButton');
+    clearButton.onclick = function() {
+alert('Hi');
+        return false;
+    }
+
 
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -73,14 +79,14 @@ function getPlaces() {
 
         var resultLink = document.createElement('a');
         resultLink.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address));
-        resultLink.setAttribute('class', 'list-group-item');
+        resultLink.setAttribute('class', 'list-group-item list-group-item-info');
         resultLink.setAttribute('href', '#');
         resultsList.appendChild(resultLink);
 
-        resultLink.onclick =function() {
+        resultLink.onclick = function() {
 
             openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
             return false;
         }
 

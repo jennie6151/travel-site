@@ -66,11 +66,20 @@ ul.topnav li.right {
     padding-left: 15px;
     font-size: 30px;
     vertical-align: middle;
+    background-color:#f9f9f9;
 }
 
-.btn {
+.searchButton {
     border-radius: 5px;
     font-size: 30px;
+    vertical-align: middle;
+}
+
+.searchClearButton{
+    color:#bada55;
+    background-color:#f9f9f9;
+    border-radius: 0px;
+    font-size: 30.5px;
     vertical-align: middle;
 }
 
@@ -96,10 +105,9 @@ input:focus::-webkit-input-placeholder {
     font-size: 30px;
 }
 
-
 .placesResults{
     margin:20px;
-    width: 97%;
+    width: 98%;
 }
 
 
@@ -109,7 +117,7 @@ input:focus::-webkit-input-placeholder {
     background-color: #2e3532;
     color: #66d7d1;
     min-height: 80px;
-    margin-top: -10px;
+    margin-top: -20px;
     padding-top: 30px;
     text-align: center;
     left: 0;
