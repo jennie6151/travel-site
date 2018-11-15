@@ -13,20 +13,31 @@ function initAutocomplete() {
     var input = document.getElementById('mapSearchInput');
     searchBox = new google.maps.places.SearchBox(input);
 
-    var clearButton = document.getElementById('clearButton');
-    clearButton.onclick = function() {
-alert('Hi');
-        return false;
-    }
-
-
-    map.addListener('bounds_changed', function() {
+       map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
     });
 
     searchBox.addListener('places_changed', getPlaces);
 }
 
+
+ 
+  
+  $(document).ready(function(){
+    $('#touristAttractionsButton').click(function() {
+        if($('#touristAttractions').is(":checked")){
+        alert('You want to find tourist attractions.');}
+    });
+  
+  //Attach a click to a button  $('#buttonid').click(
+  
+        //inside the click get the check box #touristAttractions and see if it is checked 
+        
+        //if it is checked pop an alert up
+        
+        //alert('You want to find tourist attractions');
+  
+});
 
 function getPlaces() {
     var places = searchBox.getPlaces();
@@ -86,7 +97,7 @@ function getPlaces() {
         resultLink.onclick = function() {
 
             openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 400);
             return false;
         }
 

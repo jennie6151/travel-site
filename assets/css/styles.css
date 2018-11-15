@@ -15,6 +15,12 @@ body {
     padding: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    .mainTitle {
+    font-size: 30px;
+    }
+}
+
 /**---------------- Navbar ---------------**/
 
 ul.topnav {
@@ -45,7 +51,7 @@ ul.topnav li.right {
     float: right;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     ul.topnav li.right,
     ul.topnav li {
         float: none;
@@ -57,8 +63,7 @@ ul.topnav li.right {
     height: 600px;
 }
 
-
-.form-control {
+.bigSearchBox {
     width: 80%;
     height: 57px;
     border-color: transparent;
@@ -69,18 +74,29 @@ ul.topnav li.right {
     background-color:#f9f9f9;
 }
 
-.searchButton {
-    border-radius: 5px;
-    font-size: 30px;
-    vertical-align: middle;
+@media screen and (max-width: 768px) {
+    .bigSearchBox {
+    width: 70%;
+    font-size: 10px;
+    height: 40px;
+    }
 }
 
-.searchClearButton{
-    color:#bada55;
+.clearButton{
+    height: 57px;
+    color:#d2d2d2;
     background-color:#f9f9f9;
+    border-color: transparent;
     border-radius: 0px;
     font-size: 30.5px;
     vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+    .clearButton {
+    height: 40px;
+    font-size: 25px;
+    }
 }
 
 ::placeholder {
@@ -105,11 +121,29 @@ input:focus::-webkit-input-placeholder {
     font-size: 30px;
 }
 
+@media screen and (max-width: 768px) {
+    .placeholder {
+   font-size:10px;
+    }
+}
+
 .placesResults{
     margin:20px;
     width: 98%;
 }
 
+.filterCheckbox {
+    color:#2e3532;
+    font-size: large;
+    
+}
+
+@media screen and (max-width: 992px) {
+    .filterCheckbox {
+    font-size: medium;
+    display: block;
+    }
+}
 
 /**---------------- Footer ---------------**/
 
@@ -117,7 +151,6 @@ input:focus::-webkit-input-placeholder {
     background-color: #2e3532;
     color: #66d7d1;
     min-height: 80px;
-    margin-top: -20px;
     padding-top: 30px;
     text-align: center;
     left: 0;
