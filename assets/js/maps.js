@@ -11,7 +11,7 @@ function initAutocomplete() {
     });
 
     var input = document.getElementById('mapSearchInput');
-    searchBox = new google.maps.places.SearchBox(input);
+    searchBox = new google.maps.places.SearchBox(input,{   type: ['store']});
 
        map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -19,10 +19,10 @@ function initAutocomplete() {
 
     searchBox.addListener('places_changed', getPlaces);
 }
-
+  var filterResults = [];
   $(document).ready(function(){
     $('#touristAttractionsButton').click(function() {
-        var filterResults = [];
+         filterResults = [];
         if($('#touristAttractions').is(":checked")){
             filterResults.push('amusement_park', 'aquarium', 'art_gallery', 'bowling_alley', 'casino', 'cemetery', 'church', 'city_hall', 'courthouse', 'embassy', 'hindu_temple', 'library', 'mosque', 'movie_theater', 'museum', 'night_club', 'park', 'shopping_mall', 'spa', 'stadium', 'synagogue', 'zoo');
         alert('You want to find tourist attractions.');}
