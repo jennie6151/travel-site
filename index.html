@@ -7,7 +7,7 @@
     <title>Wanderfeet | The travel planning tool</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="icon" href="assets/images/footprints-logo.png">
+    <link rel="icon" href="/assets/images/footprints-logo.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -30,50 +30,54 @@
                     <h1 class="mainTitle">Where in the world will you go?</h1>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-12">
                     <div class="input-group">
-                        <input id="mapSearchInput" class="form-control bigSearchBox" type="text" placeholder="Start typing a place name..." name="search">
+                        <input id="mapSearchInput" class="form-control bigSearchBox" type="text" placeholder="Enter a city" name="search">
                         <span class="input-group-btn">
                             <a href="index.html" class="clearButton btn"><i class="fa fa-times"></i></a>
                         </span>
-                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
                     <form>
                         <label class="checkbox-inline filterCheckbox">
-                            <input type="checkbox" name="touristAttractions" id="touristAttractions">Tourist attractions
+                            <input type="checkbox" name="touristAttractions" id="touristAttractions">Find tourist attractions
                         </label>
                         <label class="checkbox-inline filterCheckbox">
-                            <input type="checkbox" name="accommodation" id="accommodation">Accommodation
+                            <input type="checkbox" name="accommodation" id="accommodation">Find accommodation
                         </label>
                         <label class="checkbox-inline filterCheckbox">
-                            <input type="checkbox" name="barsRestaurants" id="barsRestaurants">Bars and restaurants
+                            <input type="checkbox" name="barsRestaurants" id="barsRestaurants">Find bars & restaurants
                         </label>
                         <label class="checkbox-inline filterCheckbox">
-                            <input type="checkbox" name="travel" id="travel">Travel
+                            <input type="checkbox" name="travel" id="travel">Find travel options
                         </label>
                     </form>
                 </div>
             </div>
             <div>
-            <button type="button" class="touristAttractionsButton" id="touristAttractionsButton">Tourist attractions</button>
+                <button type="button" class="touristAttractionsButton" id="touristAttractionsButton">Tourist attractions</button>
             </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        </div>
+        </div>
         </div>
     </header>
 
     <section>
-        <div id="googleMap"></div>
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                <div id="searchResults" class="list-group placesResults"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div id="googleMap"></div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div id="searchResults" class="list-group placesResults"></div>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 

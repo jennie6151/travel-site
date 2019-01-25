@@ -11,6 +11,7 @@ function initAutocomplete() {
     });
 
     var input = document.getElementById('mapSearchInput');
+
     searchBox = new google.maps.places.SearchBox(input,{   type: ['store']});
 
        map.addListener('bounds_changed', function() {
@@ -19,6 +20,7 @@ function initAutocomplete() {
 
     searchBox.addListener('places_changed', getPlaces);
 }
+
   var filterResults = [];
   $(document).ready(function(){
     $('#touristAttractionsButton').click(function() {
