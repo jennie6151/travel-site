@@ -23,6 +23,54 @@ body {
     }
 }
 
+/**---------------- Search ---------------**/
+#findAccommodation {
+    text-align: left;
+    font-size: 16px;
+    z-index: 5;
+    color:#66d7d1;
+}
+
+@media screen and (min-width: 992px) {
+    #findAccommodation {
+    font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #findAccommodation {
+    font-size: 40px;
+    }
+}
+
+#locationField {
+    width: 140px;
+    height: 25px;
+    left: 108px;
+    top: 0px;
+    z-index: 5;
+    background-color: #f0f0f0;
+      }
+      
+@media screen and (min-width: 992px) {
+    #locationField {
+    font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #locationField {
+    font-size: 40px;
+    }
+}
+
+.locationInput{
+    width: 480px;
+    height: 50px;
+    left: 108px;
+    background-color: #f0f0f0;
+}
+
 /**---------------- Navbar ---------------**/
 
 ul.topnav {
@@ -72,75 +120,9 @@ ul.topnav li.right {
     height: 600px;
 }
 
-.bigSearchBox {
-    width: 80%;
-    height: 57px;
-    border-color: transparent;
-    border-radius: 5px;
-    padding-left: 15px;
-    font-size: 30px;
-    vertical-align: middle;
-    background-color:#f9f9f9;
-}
 
-@media screen and (max-width: 768px) {
-    .bigSearchBox {
-    width: 70%;
-    font-size: 20px;
-    height: 40px;
-    }
-}
 
-.clearButton{
-    height: 57px;
-    color:#d2d2d2;
-    background-color:#f9f9f9;
-    border-color: transparent;
-    border-radius: 0px;
-    font-size: 30.5px;
-    vertical-align: middle;
-}
 
-@media screen and (max-width: 768px) {
-    .clearButton {
-    height: 40px;
-    font-size: 25px;
-    }
-}
-
-::placeholder {
-    color: #2e3532;
-    opacity: 1;
-    font-size: 30px;
-}
-
-@media screen and (max-width: 768px) {
-    ::placeholder {
-    font-size: 20px;
-}
-}
-
-input:focus::-webkit-input-placeholder {
-    opacity: 0;
-}
-
-:-ms-input-placeholder {
-    color: #2e3532;
-    opacity: 1;
-    font-size: 30px;
-}
-
-::-ms-input-placeholder {
-    color: #2e3532;
-    opacity: 1;
-    font-size: 30px;
-}
-
-@media screen and (max-width: 768px) {
-    .placeholder {
-   font-size:10px;
-    }
-}
 
 .placesResults{
     margin:20px;
@@ -149,17 +131,6 @@ input:focus::-webkit-input-placeholder {
     overflow:auto;
 }
 
-.filterCheckbox {
-    color:#2e3532;
-    font-size: large;
-}
-
-@media screen and (max-width: 992px) {
-    .filterCheckbox {
-    font-size: medium;
-    display: block;
-    }
-}
 
 /**---------------- Footer ---------------**/
 

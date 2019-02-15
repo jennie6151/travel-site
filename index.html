@@ -17,30 +17,41 @@
 </head>
 
 <body>
-    
+
     <nav>
         <ul class="topnav">
             <li><a class="active" href="index.html"><img src="/assets/images/wanderfeetLogo.png" alt="Wanderfeet logo"></a></li>
         </ul>
     </nav>
 
-    <header class="header">
-       
-    </header>
-
     <section>
         <div class="container">
             <div class="row">
-                <div id="mapContainer" class="col-xs-12 col-md-6">
-                    <div id="googleMap"></div>
-                </div>
-                <div id="listContainer" class="col-xs-12 col-md-6">
-                    <div id="searchResults" class="list-group placesResults">
-                         <div class="well">Results for searches will be found here</div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div id="findAccommodation">Find accommodation in:</div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="locationField">
+                                <input id="autocomplete" class="locationInput" placeholder="Where will you wander?" type="text" />
+                            </div>
+                        </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                                <div id="mapContainer" class="col-xs-12 col-md-6">
+                                    <div id="googleMap"></div>
+                                </div>
+                                <div id="listContainer" class="col-xs-12 col-md-6">
+                                    <div id="searchResults" class="list-group placesResults">
+                                        <div class="well">Results for searches will be found here</div>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                 </div>
     </section>
 
     <!-- Footer -->
