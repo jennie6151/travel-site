@@ -44,7 +44,7 @@ body {
 }
 
 #locationField {
-    width: 140px;
+    width: 120px;
     height: 25px;
     left: 108px;
     top: 0px;
@@ -55,12 +55,14 @@ body {
 @media screen and (min-width: 992px) {
     #locationField {
     font-size: 26px;
+    width:250px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     #locationField {
     font-size: 40px;
+    width:480px;
     }
 }
 
@@ -69,6 +71,24 @@ body {
     height: 50px;
     left: 108px;
     background-color: #f0f0f0;
+}
+
+#controls {
+    position: absolute;
+    left: 300px;
+    width: 140px;
+    top: 0px;
+    z-index: 5;
+    background-color: #f0f0f0;
+}
+    
+#autocomplete {
+    width: 100%;
+}
+
+#country {
+    
+    width: 100%;
 }
 
 /**---------------- Navbar ---------------**/
