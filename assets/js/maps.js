@@ -1,84 +1,62 @@
 var map;
 var infowindow;
 var markers = [];
+var autocomplete;
+var countryRestrict = {'country': 'uk'};
+var countries = {
+    
+        'be': {
+          center: {lat: 50.5, lng: 4.5},
+          zoom: 4
+        },
+        'hr': {
+          center: {lat: 45.1, lng: 15.2},
+          zoom: 3
+        },
+        'fr': {
+          center: {lat: 46.2, lng: 2.2},
+          zoom: 3
+        },
+        'de': {
+          center: {lat: 51.2, lng: 10.4},
+          zoom: 5
+        },
+        'it': {
+          center: {lat: 41.8, lng: 12.5},
+          zoom: 5
+        },
+        'pl': {
+          center: {lat: 51.9, lng: 19.1},
+          zoom: 4
+        },
+        'pt': {
+          center: {lat: 39.3, lng: 8.2},
+          zoom: 5
+        },
+        'es': {
+          center: {lat: 40.4, lng: 3.7},
+          zoom: 5
+        },
+        'ro': {
+          center: {lat: 45.9, lng: 24.9},
+          zoom: 5
+        },
+        'uk': {
+          center: {lat: 55.3, lng: 3.4},
+          zoom: 5
+        }
+      };
 
 function initAutocomplete() {
     var mapCenter = new google.maps.LatLng(51.508710, -0.075799);
     map = new google.maps.Map(document.getElementById('googleMap'), {
-        zoom: 3,
-        center: mapCenter,
-    });
-
-    
-
- 
-
-
-
-    markers.forEach(function(marker) {
-        marker.setMap(null);
-    });
-
-    markers = [];
-
-    var resultsList = document.getElementById('searchResults');
-    resultsList.innerHTML = '';
-
-    var bounds = new google.maps.LatLngBounds();
-
-
-    places.forEach(function(place) {
-
-        if (!place.geometry) {
-            console.log("Returned place contains no geometry");
-            return;
-        }
-        var icon = {
-            url: place.icon,
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
-        };
-
-        var marker = new google.maps.Marker({
-            map: map,
-            icon: icon,
-            title: place.name,
-            position: place.geometry.location
+          zoom: countries['uk'].zoom,
+          center: countries['uk'].center,
+          mapTypeControl: false,
+          panControl: false,
+          zoomControl: false,
+          streetViewControl: false
         });
-
-
-        marker.addListener('click', function() {
-
-            openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
-        });
-
-        markers.push(marker);
-
-
-        var resultLink = document.createElement('a');
-        resultLink.appendChild(document.createTextNode(place.name + ' ' + place.formatted_address));
-        resultLink.setAttribute('class', 'list-group-item list-group-item-info');
-        resultLink.setAttribute('href', '#');
-        resultsList.appendChild(resultLink);
-
-        resultLink.onclick = function() {
-
-            openInfoWindow(map, marker, place.name + '<br/> ' + place.formatted_address)
-            window.scrollTo(0, 400);
-            return false;
-        }
-
-        if (place.geometry.viewport) {
-
-            bounds.union(place.geometry.viewport);
-        }
-        else {
-            bounds.extend(place.geometry.location);
-        }
-    });
-    map.fitBounds(bounds);
 }
 
 var globalInfoWindow
