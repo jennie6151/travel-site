@@ -57,7 +57,28 @@ function initAutocomplete() {
           zoomControl: false,
           streetViewControl: false
         });
+        
+        autocomplete = new google.maps.places.Autocomplete(
+            (
+                document.getElementById('autocomplete')), {
+              types: ['(cities)'],
+              componentRestrictions: countryRestrict
+            });
+        places = new google.maps.places.PlacesService(map);
+
+autocomplete.addListener('place_changed', onPlaceChanged);
 }
+
+function onPlaceChanged() {
+        var place = autocomplete.getPlace();
+        if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(15);
+          search();
+        } else {
+          document.getElementById('autocomplete').placeholder = 'Enter a city';
+        }
+      }
 
 var globalInfoWindow
 
