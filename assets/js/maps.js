@@ -1,6 +1,5 @@
 var map;
 var infowindow;
-var searchBox;
 var markers = [];
 
 function initAutocomplete() {
@@ -10,45 +9,11 @@ function initAutocomplete() {
         center: mapCenter,
     });
 
-    var input = document.getElementById('mapSearchInput');
+    
 
-    searchBox = new google.maps.places.SearchBox(input,{   type: ['store']});
+ 
 
-       map.addListener('bounds_changed', function() {
-        searchBox.setBounds(map.getBounds());
-    });
 
-    searchBox.addListener('places_changed', getPlaces);
-}
-
-  var filterResults = [];
-  $(document).ready(function(){
-    $('#touristAttractionsButton').click(function() {
-         filterResults = [];
-        if($('#touristAttractions').is(":checked")){
-            filterResults.push('amusement_park', 'aquarium', 'art_gallery', 'bowling_alley', 'casino', 'cemetery', 'church', 'city_hall', 'courthouse', 'embassy', 'hindu_temple', 'library', 'mosque', 'movie_theater', 'museum', 'night_club', 'park', 'shopping_mall', 'spa', 'stadium', 'synagogue', 'zoo');
-        alert('You want to find tourist attractions.');}
-        
-        if($('#accommodation').is(":checked")){
-            filterResults.push('campground', 'lodging', 'rv_park');
-        alert('You want to find accommodation.');}
-        
-        if($('#barsRestaurants').is(":checked")){
-            filterResults.push('bar', 'cafe', 'meal_takeaway', 'restaurant');
-        alert('You want to find bars and restaurants.');}
-        
-        if($('#travel').is(":checked")){
-            filterResults.push('airport', 'bus_station', 'car_rental', 'gas_station', 'parking', 'subway_station', 'taxi_stand', 'train_station');
-        alert('You want to find travel options.');}
-    });
-});
-
-function getPlaces() {
-    var places = searchBox.getPlaces();
-
-    if (places.length == 0) {
-        return;
-    }
 
     markers.forEach(function(marker) {
         marker.setMap(null);

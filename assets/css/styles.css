@@ -8,6 +8,7 @@ body {
 .header {
     background-color: #66d7d1;
     height: 300px;
+    margin-bottom:20px;
 }
 
 .mainTitle {
@@ -30,6 +31,7 @@ ul.topnav {
     overflow: hidden;
     background-color: #2e3532;
     margin-bottom: 0px;
+    height:140px;
 }
 
 ul.topnav li {
@@ -58,6 +60,12 @@ ul.topnav li.right {
         float: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+   ul.topnav{
+    height:100%;   
+         }
+    }
 
 #googleMap {
     width: 100%;
@@ -144,7 +152,6 @@ input:focus::-webkit-input-placeholder {
 .filterCheckbox {
     color:#2e3532;
     font-size: large;
-    
 }
 
 @media screen and (max-width: 992px) {
@@ -160,10 +167,12 @@ input:focus::-webkit-input-placeholder {
     position: relative;
     background-color: #2e3532;
     color: #66d7d1;
-    min-height: 80px;
+    min-height: 100%;
     padding-top: 30px;
     text-align: center;
     left: 0;
     bottom: 0;
     width: 100%;
+    font-size:20px;
+    margin:0px;
 }
