@@ -29,17 +29,17 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-4">
                             <div id="findAccommodation">Find accommodation in:</div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-4">
                             <div id="locationField">
                                 <input id="autocomplete" class="locationInput" placeholder="Where will you wander?" type="text" />
                             </div>
-                        </div>
 
-                        <div id="controls">
-                            <select id="country">
+                            <div class="col-xs-4">
+                                <div id="controls">
+                                    <select id="country">
                                 <option value="all">All</option>
                                 <option value="be">Belgium</option>
                                 <option value="hr">Croatia</option>
@@ -52,6 +52,34 @@
                                 <option value="ro">Romania</option>
                                 <option value="uk">United Kingdom</option>
                             </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="pac-card" id="pac-card">
+                                    <div>
+                                        <div id="title">
+                                            What do you want to find?
+                                        </div>
+                                        <div id="type-selector" class="pac-controls">
+                                            <input type="radio" name="type" id="changetype-accommodation" checked="checked">
+                                            <label class="type-selectors" for="changetype-accommodation">Accommodation</label>
+
+                                            <input type="radio" name="type" id="changetype-eateries">
+                                            <label class="type-selectors" for="changetype-eateries">Eateries</label>
+
+                                            <input type="radio" name="type" id="changetype-attractions">
+                                            <label class="type-selectors" for="changetype-attractions">Attractions</label>
+
+                                            <input type="radio" name="type" id="changetype-travel">
+                                            <label class="type-selectors" for="changetype-travel">Travel</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="row">

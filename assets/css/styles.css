@@ -39,7 +39,7 @@ body {
 
 @media screen and (min-width: 1200px) {
     #findAccommodation {
-    font-size: 40px;
+    font-size: 30px;
     }
 }
 
@@ -87,8 +87,16 @@ body {
 }
 
 #country {
-    
     width: 100%;
+}
+
+.type-selectors{
+    color: #f0f0f0;
+    font-size: 28px;
+    font-weight: normal;
+    padding-right: 30px;
+    margin: 10px;
+    cursor:pointer;
 }
 
 /**---------------- Navbar ---------------**/
