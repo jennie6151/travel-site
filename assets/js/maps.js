@@ -95,7 +95,7 @@ function search() {
 
 
     $.each(searchType, function() {
-       
+
         if (this == "accommodation") {
             search.types.push("lodging")
         }
@@ -119,24 +119,30 @@ function search() {
             clearMarkers();
 
             for (var i = 0; i < results.length; i++) {
-                var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-                // var markerIcon = markerLetter + '.png';
-                // Use marker animation to drop the icons incrementally on the map.
+
                 markers[i] = new google.maps.Marker({
                     position: results[i].geometry.location,
                     animation: google.maps.Animation.DROP
-                    //icon: markerIcon
                 });
                 // If the user clicks a hotel marker, show the details of that hotel
                 // in an info window.
                 markers[i].placeResult = results[i];
                 //google.maps.event.addListener(markers[i], 'click', showInfoWindow);
                 setTimeout(dropMarker(i), i * 100);
-                //addResult(results[i], i);
+                addResult(results[i], i);
             }
         }
     });
 }
+
+function addResult(result, i) {
+    var resultDisplayList = document.getElementById('searchResults');
+    var resultsTextContainer = document.createElement('li');
+    
+    resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + result.formatted_address + ' ' + result.rating));
+            resultDisplayList.appendChild(resultsTextContainer);
+}
+
 
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
@@ -148,10 +154,10 @@ function clearMarkers() {
 }
 
 function clearResults() {
-    //var results = document.getElementById('results');
-    //while (results.childNodes[0]) {
-    // results.removeChild(results.childNodes[0]);
-    //}
+    var resultDisplayList = document.getElementById('searchResults');
+    while (resultDisplayList.childNodes[0]) {
+    resultDisplayList.removeChild(resultDisplayList.childNodes[0]);
+    }
 }
 
 function dropMarker(i) {
