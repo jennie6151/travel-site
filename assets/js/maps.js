@@ -67,6 +67,10 @@ function initAutocomplete() {
     places = new google.maps.places.PlacesService(map);
 
     autocomplete.addListener('place_changed', onPlaceChanged);
+
+    document.getElementById('country').addEventListener(
+        'change', setAutocompleteCountry);
+
 }
 
 function onPlaceChanged() {
@@ -191,4 +195,20 @@ function openInfoWindow(map, marker, title) {
 
     globalInfoWindow.open(map, marker);
 
+}
+
+function setAutocompleteCountry() {
+    var country = document.getElementById('country').value;
+    if (country == 'all') {
+        autocomplete.setComponentRestrictions({ 'country': [] });
+        map.setCenter({ lat: 15, lng: 0 });
+        map.setZoom(2);
+    }
+    else {
+        autocomplete.setComponentRestrictions({ 'country': country });
+        map.setCenter(countries[country].center);
+        map.setZoom(countries[country].zoom);
+    }
+    clearResults();
+    clearMarkers();
 }
