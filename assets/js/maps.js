@@ -94,8 +94,6 @@ function search() {
     });
 
 
-    //TO DO for each of the checked radio buttons add to types list search.types.push("restaurants")
-
     $.each(searchType, function() {
        
         if (this == "accommodation") {
