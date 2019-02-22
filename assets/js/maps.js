@@ -84,14 +84,24 @@ function onPlaceChanged() {
 function search() {
     var search = {
         bounds: map.getBounds(),
-        types: ['lodging']
+        types: []
     };
+
+var searchType = [];
+            $.each($("input[name='type']:checked"), function(){            
+                searchType.push($(this).val());
+            });
+
+   
+
+    //TO DO for each of the checked radio buttons add to types list search.types.push("restaurants")
+
 
     places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
-            
+
             for (var i = 0; i < results.length; i++) {
                 var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
                 // var markerIcon = markerLetter + '.png';
@@ -122,17 +132,17 @@ function clearMarkers() {
 }
 
 function clearResults() {
-        //var results = document.getElementById('results');
-        //while (results.childNodes[0]) {
-         // results.removeChild(results.childNodes[0]);
-        //}
-      }
+    //var results = document.getElementById('results');
+    //while (results.childNodes[0]) {
+    // results.removeChild(results.childNodes[0]);
+    //}
+}
 
- function dropMarker(i) {
-        return function() {
-          markers[i].setMap(map);
-        };
-      }
+function dropMarker(i) {
+    return function() {
+        markers[i].setMap(map);
+    };
+}
 
 var globalInfoWindow
 

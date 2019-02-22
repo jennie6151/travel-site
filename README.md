@@ -19,11 +19,11 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 <a name="overview"></a>
 ## Overview
 ### What is this website for?
-This is a site that calls on the Google Maps API and the Google Places API to allow users to search for their next holiday destination.
+This is a site that calls on the Google Maps API and the Google Places API to allow users to search for their holiday and travel needs.
 
 ### What does this website do?
 This website is motivated by the brief provided by [The Code Institute](https://codeinstitute.net/) and uses the criteria supplied. It was imperative that I create a site that helps users to:
-* Select a destination city
+* Select a destination country/city
 * Find tourist attractions
 * Find accommodation
 * Find bars and restaurants
@@ -48,7 +48,7 @@ Clone this repo to your local machine using [https://github.com/jennie6151/trave
 ## Features
 ### Existing features
 * Eye catching index page
-* Large easy to see and use search box with fontawesome icon for user recognition
+* Large easy to see and use search box
 * Large Google map - filling lower half of index page so site purpose is evident immediately
 * Clear search results using Bootstrap button info class
 
@@ -95,5 +95,6 @@ I used **Git** for versioning on this project.
 * *Antonija Šimić* - mentor.
 * *Paul Lewis* - colleague (Software Developer) who tested my finished site.
 * Various family and friends - tested the site on multiple devices.
+* Used the Google Maps Platform Documentation throughout the project for reference
 
-#### *MIT © 2018 Jennifer Dick*
+#### *MIT © 2019 Jennifer Dick*

@@ -56,7 +56,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-xs-12">
                                 <div class="pac-card" id="pac-card">
                                     <div>
@@ -64,23 +64,34 @@
                                             What do you want to find?
                                         </div>
                                         <div id="type-selector" class="pac-controls">
-                                            <input type="radio" name="type" id="changetype-accommodation" checked="checked">
+                                            <input type="checkbox" name="type" id="changetype-accommodation" checked="checked">
                                             <label class="type-selectors" for="changetype-accommodation">Accommodation</label>
 
-                                            <input type="radio" name="type" id="changetype-eateries">
+                                            <input type="checkbox" name="type" id="changetype-eateries">
                                             <label class="type-selectors" for="changetype-eateries">Eateries</label>
 
-                                            <input type="radio" name="type" id="changetype-attractions">
+                                            <input type="checkbox" name="type" id="changetype-attractions">
                                             <label class="type-selectors" for="changetype-attractions">Attractions</label>
 
-                                            <input type="radio" name="type" id="changetype-travel">
+                                            <input type="checkbox" name="type" id="changetype-travel">
                                             <label class="type-selectors" for="changetype-travel">Travel</label>
 
+  <button type="button">Select</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        -->
+
+                        <form>
+                            <h3 style="color:#baec9c;">What do you want to find?</h3>
+                            <label style="color:#baec9c;"><input type="checkbox" value="accommodation" name="type"> Accommodation</label>
+                            <label style="color:#baec9c;"><input type="checkbox" value="eateries" name="type"> Eateries</label>
+                            <label style="color:#baec9c;"><input type="checkbox" value="attractions" name="type"> Attractions</label>
+                            <label style="color:#baec9c;"><input type="checkbox" value="travel" name="type"> Travel</label>
+                            <button type="button">Select</button>
+                        </form>
 
                         <div class="row">
                             <div class="col-xs-12">
