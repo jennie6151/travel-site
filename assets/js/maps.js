@@ -87,15 +87,33 @@ function search() {
         types: []
     };
 
-var searchType = [];
-            $.each($("input[name='type']:checked"), function(){            
-                searchType.push($(this).val());
-            });
+    var searchType = [];
+    $.each($("input[name='type']:checked"), function() {
+        searchType.push($(this).val());
 
-   
+    });
+
 
     //TO DO for each of the checked radio buttons add to types list search.types.push("restaurants")
 
+    $.each(searchType, function() {
+       
+        if (this == "accommodation") {
+            search.types.push("lodging")
+        }
+
+        if (this == "restaurants") {
+            search.types.push("restaurant")
+        }
+
+        if (this == "attractions") {
+            search.types.push("amusement_park")
+        }
+
+        if (this == "travel") {
+            search.types.push("transit_station")
+        }
+    });
 
     places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
