@@ -128,16 +128,15 @@ function search() {
                     position: results[i].geometry.location,
                     animation: google.maps.Animation.DROP
                 });
-                // If the user clicks a hotel marker, show the details of that hotel
-                // in an info window.
+
                 markers[i].placeResult = results[i];
-                //google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+
+                markers[i].addListener('click', showInfoWindow);
+
                 setTimeout(dropMarker(i), i * 100);
                 addResult(results[i], i);
             }
         }
-
-        //check if results length is 0. If it is add a list item to search results saying "nothing was found"
 
         if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
             clearResults();
@@ -152,6 +151,22 @@ function search() {
     });
 }
 
+function showInfoWindow() {
+    var marker = this;
+    places.getDetails({ placeId: marker.placeResult.place_id },
+        function(place, status) {
+            if (status !== google.maps.places.PlacesServiceStatus.OK) {
+                return;
+            }
+            if(globalInfoWindow){globalInfoWindow.close()}
+            globalInfoWindow = new google.maps.InfoWindow({
+            content:place.name + ' <br>' + place.vicinity
+        });
+            globalInfoWindow.open(map, marker);
+            
+        });
+}
+
 function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
@@ -159,7 +174,6 @@ function addResult(result, i) {
     resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + result.formatted_address + ' ' + result.rating));
     resultDisplayList.appendChild(resultsTextContainer);
 }
-
 
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
