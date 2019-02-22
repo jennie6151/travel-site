@@ -132,15 +132,28 @@ function search() {
                 addResult(results[i], i);
             }
         }
+
+        //check if results length is 0. If it is add a list item to search results saying "nothing was found"
+
+        if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+            clearResults();
+            clearMarkers();
+
+            var resultDisplayList = document.getElementById('searchResults');
+            var resultsTextContainer = document.createElement('li');
+
+            resultsTextContainer.appendChild(document.createTextNode('No results have been found. Please search again'));
+            resultDisplayList.appendChild(resultsTextContainer);
+        }
     });
 }
 
 function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
-    
+
     resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + result.formatted_address + ' ' + result.rating));
-            resultDisplayList.appendChild(resultsTextContainer);
+    resultDisplayList.appendChild(resultsTextContainer);
 }
 
 
@@ -156,7 +169,7 @@ function clearMarkers() {
 function clearResults() {
     var resultDisplayList = document.getElementById('searchResults');
     while (resultDisplayList.childNodes[0]) {
-    resultDisplayList.removeChild(resultDisplayList.childNodes[0]);
+        resultDisplayList.removeChild(resultDisplayList.childNodes[0]);
     }
 }
 
