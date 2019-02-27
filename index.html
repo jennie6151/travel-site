@@ -34,9 +34,9 @@
                         </div>
                         <div class="col-xs-4">
                             <div id="locationField">
-                                <input id="autocomplete" class="locationInput" placeholder="Where will you wander?" type="text" />
+                                <input id="autocomplete" class="locationInput" placeholder="Where will you wander?" onfocus="this.placeholder=''" onblur="this.placeholder='Type'" type="text" />
                             </div>
-
+                            </div>
                             <div class="col-xs-4">
                                 <div id="controls">
                                     <select id="country">
@@ -54,42 +54,21 @@
                             </select>
                                 </div>
                             </div>
-                        </div>
+                      
 
-                        <!-- <div class="row">
-                            <div class="col-xs-12">
-                                <div class="pac-card" id="pac-card">
-                                    <div>
-                                        <div id="title">
-                                            What do you want to find?
-                                        </div>
-                                        <div id="type-selector" class="pac-controls">
-                                            <input type="checkbox" name="type" id="changetype-accommodation" checked="checked">
-                                            <label class="type-selectors" for="changetype-accommodation">Accommodation</label>
-
-                                            <input type="checkbox" name="type" id="changetype-eateries">
-                                            <label class="type-selectors" for="changetype-eateries">Eateries</label>
-
-                                            <input type="checkbox" name="type" id="changetype-attractions">
-                                            <label class="type-selectors" for="changetype-attractions">Attractions</label>
-
-                                            <input type="checkbox" name="type" id="changetype-travel">
-                                            <label class="type-selectors" for="changetype-travel">Travel</label>
-
-  <button type="button">Select</button>
-                                        </div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="col-md-4">
+                                <h3 class="typeSelectorTitle">What do you want to find?</h3>
                                 </div>
+                                <div class="selectorCheckboxes col-md-8">
+                                <label class="typeSelector"><input type="radio" value="accommodation" name="type" checked> Accommodation</label>
+                                <label class="typeSelector"><input type="radio" value="restaurants" name="type"> Restaurants</label>
+                                <label class="typeSelector"><input type="radio" value="attractions" name="type"> Attractions</label>
+                                <label class="typeSelector"><input type="radio" value="travel" name="type"> Travel</label>
+                             </div>
                             </div>
                         </div>
-                        -->
-
-                            <h3 style="color:#baec9c;">What do you want to find?</h3>
-                            <label style="color:#baec9c;"><input type="radio" value="accommodation" name="type" checked> Accommodation</label>
-                            <label style="color:#baec9c;"><input type="radio" value="restaurants" name="type"> Restaurants</label>
-                            <label style="color:#baec9c;"><input type="radio" value="attractions" name="type"> Attractions</label>
-                            <label style="color:#baec9c;"><input type="radio" value="travel" name="type"> Travel</label>
-                          
 
                         <div class="row">
                             <div class="col-xs-12">
@@ -99,7 +78,7 @@
                                     </div>
                                     <div id="listContainer" class="col-xs-12 col-md-6">
                                         <ul id="searchResults" class="list-group placesResults">
-                                            <li class="well">Results for searches will be found here</li>
+                                            <li class="well emptySearchResults">Results for searches will be found here</li>
                                         </ul>
                                     </div>
                                 </div>

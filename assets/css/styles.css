@@ -90,15 +90,21 @@ body {
     width: 100%;
 }
 
-.type-selectors{
-    color: #f0f0f0;
-    font-size: 28px;
+
+.typeSelector{
+    color: #bada55;
+    font-size: 20px;
     font-weight: normal;
     padding-right: 30px;
     margin: 10px;
     cursor:pointer;
 }
 
+
+.typeSelectorTitle{
+    color:#bada55;
+    font-weight:normal;
+}
 /**---------------- Navbar ---------------**/
 
 ul.topnav {
@@ -148,17 +154,18 @@ ul.topnav li.right {
     height: 600px;
 }
 
-
-
-
-
 .placesResults{
     margin:20px;
     width: 98%;
     height:600px;
     overflow:auto;
+    color:#bada55;
 }
 
+.emptySearchResults{
+    font-size:20px;
+    color:#2e3532;
+}
 
 /**---------------- Footer ---------------**/
 
