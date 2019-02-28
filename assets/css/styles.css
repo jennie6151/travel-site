@@ -25,25 +25,6 @@ body {
 
 /**---------------- Search ---------------**/
 
-#findAccommodation {
-    text-align: left;
-    font-size: 16px;
-    z-index: 5;
-    color: #66d7d1;
-}
-
-@media screen and (min-width: 992px) {
-    #findAccommodation {
-        font-size: 26px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    #findAccommodation {
-        font-size: 30px;
-    }
-}
-
 #locationField {
     top: 0px;
     z-index: 5;
@@ -165,6 +146,7 @@ ul.topnav li.right {
 
 #searchResults li {
     margin: 10px;
+    cursor: pointer;
 }
 
 .emptySearchResults {

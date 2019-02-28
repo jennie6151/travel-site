@@ -122,7 +122,7 @@ function search() {
         }
 
         if (this == 'travel') {
-            search.types.push('transit_station')
+            search.types.push('train_station')
         }
     });
 
@@ -179,9 +179,14 @@ function showInfoWindow() {
 function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
+    
+    resultsTextContainer.onclick = function() {
+          google.maps.event.trigger(markers[i], 'click');
+        };
+    
     var icon = document.createElement("i");
 
-    icon.className = "fas fa-arrow-right";
+    icon.className = "fas fa-map-marker-alt";
 resultsTextContainer.appendChild(icon);
     resultsTextContainer.appendChild(document.createTextNode(' ' + result.name + '. ' + 'Rating of ' + (result.rating ? result.rating : ' NA')));
     resultDisplayList.appendChild(resultsTextContainer);
