@@ -75,6 +75,12 @@ function initAutocomplete() {
   {
       search();
   });
+  
+  $("#autocomplete").on("focus", function()
+  {
+      this.placeholder='';
+      this.value='';
+  });
 
 }
 
@@ -114,7 +120,7 @@ function search() {
         }
 
         if (this == "attractions") {
-            search.types.push("amusement_park")
+            search.types.push("park")
         }
 
         if (this == "travel") {
@@ -228,6 +234,7 @@ function setAutocompleteCountry() {
         map.setCenter(countries[country].center);
         map.setZoom(countries[country].zoom);
     }
+    $('#autocomplete').val('')
     clearResults();
     clearMarkers();
 }
