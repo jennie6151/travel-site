@@ -176,7 +176,7 @@ function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
 
-    resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + 'rating of ' +result.rating));
+    resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + 'rating of ' +  (result.rating ? result.rating : " NA")  ));
     resultDisplayList.appendChild(resultsTextContainer);
 }
 
