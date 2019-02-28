@@ -70,6 +70,11 @@ function initAutocomplete() {
 
     document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
+        
+         $("input[type=radio][name=type]").on("change", function()
+  {
+      search();
+  });
 
 }
 
@@ -171,7 +176,7 @@ function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
 
-    resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + result.formatted_address + ' ' + result.rating));
+    resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + 'rating of ' +result.rating));
     resultDisplayList.appendChild(resultsTextContainer);
 }
 

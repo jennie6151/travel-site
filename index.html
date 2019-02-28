@@ -13,77 +13,71 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="assets/js/maps.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDF_eRf1gNLptacuPqKZhN2KK4S2jdXwQA&libraries=places&callback=initAutocomplete"></script>
-    </body>
 </head>
 
 <body>
 
     <nav>
         <ul class="topnav">
-            <li><a class="active" href="index.html"><img src="/assets/images/wanderfeetLogo.png" alt="Wanderfeet logo"></a></li>
+            <li><a class="active" href="index.html"><img src="/assets/images/wanderfeetLogo.png"
+                        alt="Wanderfeet logo"></a></li>
         </ul>
     </nav>
 
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div id="findAccommodation">Find accommodation in:</div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div id="locationField">
-                                <input id="autocomplete" class="locationInput" placeholder="Where will you wander?" onfocus="this.placeholder=''" onblur="this.placeholder='Type'" type="text" />
-                            </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <div id="controls">
-                                    <select id="country">
-                                <option value="all">All</option>
-                                <option value="be">Belgium</option>
-                                <option value="hr">Croatia</option>
-                                <option value="fr">France</option>
-                                <option value="de">Germany</option>
-                                <option value="it">Italy</option>
-                                <option value="pl">Poland</option>
-                                <option value="pt">Portugal</option>
-                                <option value="es">Spain</option>
-                                <option value="ro">Romania</option>
-                                <option value="uk">United Kingdom</option>
-                            </select>
-                                </div>
-                            </div>
-                      
+                <div class="col-xs-4">
+                    <div id="findAccommodation">Find accommodation in:</div>
+                </div>
+                <div class="col-xs-4">
+                    <div id="locationField">
+                        <input id="autocomplete" class="locationInput" placeholder="Where will you wander?" onfocus="this.placeholder=''" onblur="this.placeholder='Type'" type="text" />
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div id="controls">
+                        <select id="country">
+                            <option value="all">All</option>
+                            <option value="be">Belgium</option>
+                            <option value="hr">Croatia</option>
+                            <option value="fr">France</option>
+                            <option value="de">Germany</option>
+                            <option value="it">Italy</option>
+                            <option value="pl">Poland</option>
+                            <option value="pt">Portugal</option>
+                            <option value="es">Spain</option>
+                            <option value="ro">Romania</option>
+                            <option value="uk">United Kingdom</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                            <div class="col-md-4">
-                                <h3 class="typeSelectorTitle">What do you want to find?</h3>
-                                </div>
-                                <div class="selectorCheckboxes col-md-8">
-                                <label class="typeSelector"><input type="radio" value="accommodation" name="type" checked> Accommodation</label>
-                                <label class="typeSelector"><input type="radio" value="restaurants" name="type"> Restaurants</label>
-                                <label class="typeSelector"><input type="radio" value="attractions" name="type"> Attractions</label>
-                                <label class="typeSelector"><input type="radio" value="travel" name="type"> Travel</label>
-                             </div>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="typeSelectorTitle">What do you want to find?</h3>
+                </div>
+                <div class="selectorCheckboxes col-md-8">
+                    <label class="typeSelector"><input type="radio" value="accommodation" name="type" checked>
+                        Accommodation</label>
+                    <label class="typeSelector"><input type="radio" value="restaurants" name="type"> Restaurants</label>
+                    <label class="typeSelector"><input type="radio" value="attractions" name="type"> Attractions</label>
+                    <label class="typeSelector"><input type="radio" value="travel" name="type"> Travel</label>
+                </div>
+            </div>
+        </div>
 
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="row">
-                                    <div id="mapContainer" class="col-xs-12 col-md-6">
-                                        <div id="googleMap"></div>
-                                    </div>
-                                    <div id="listContainer" class="col-xs-12 col-md-6">
-                                        <ul id="searchResults" class="list-group placesResults">
-                                            <li class="well emptySearchResults">Results for searches will be found here</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row">
+            <div id="mapContainer" class="col-xs-12 col-md-6">
+                <div id="googleMap"></div>
+            </div>
+            <div id="listContainer" class="col-xs-12 col-md-6">
+                <ul id="searchResults" class="list-group placesResults">
+                    <li class="well emptySearchResults">Results for searches will be found here</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -97,5 +91,6 @@
         </div>
     </footer>
     <!-- Footer end -->
+</body>
 
 </html>
