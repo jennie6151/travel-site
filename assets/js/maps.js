@@ -70,17 +70,15 @@ function initAutocomplete() {
 
     document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
-        
-         $("input[type=radio][name=type]").on("change", function()
-  {
-      search();
-  });
-  
-  $("#autocomplete").on("focus", function()
-  {
-      this.placeholder='';
-      this.value='';
-  });
+
+    $('input[type=radio][name=type]').on('change', function() {
+        search();
+    });
+
+    $("#autocomplete").on("focus", function() {
+        this.placeholder = '';
+        this.value = '';
+    });
 
 }
 
@@ -92,7 +90,7 @@ function onPlaceChanged() {
         search();
     }
     else {
-        document.getElementById('autocomplete').placeholder = 'Enter a city';
+        document.getElementById('autocomplete').placeholder = 'Where will you wander?';
     }
 }
 
@@ -111,20 +109,20 @@ function search() {
 
     $.each(searchType, function() {
 
-        if (this == "accommodation") {
-            search.types.push("lodging")
+        if (this == 'accommodation') {
+            search.types.push('lodging')
         }
 
-        if (this == "restaurants") {
-            search.types.push("restaurant")
+        if (this == 'restaurants') {
+            search.types.push('restaurant')
         }
 
-        if (this == "attractions") {
-            search.types.push("park")
+        if (this == 'attractions') {
+            search.types.push('park')
         }
 
-        if (this == "travel") {
-            search.types.push("transit_station")
+        if (this == 'travel') {
+            search.types.push('transit_station')
         }
     });
 
@@ -169,20 +167,23 @@ function showInfoWindow() {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {
                 return;
             }
-            if(globalInfoWindow){globalInfoWindow.close()}
+            if (globalInfoWindow) { globalInfoWindow.close() }
             globalInfoWindow = new google.maps.InfoWindow({
-            content:place.name + ' <br>' + place.vicinity
-        });
+                content: place.name + ' <br>' + place.vicinity
+            });
             globalInfoWindow.open(map, marker);
-            
+
         });
 }
 
 function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
+    var icon = document.createElement("i");
 
-    resultsTextContainer.appendChild(document.createTextNode(result.name + ' ' + 'rating of ' +  (result.rating ? result.rating : " NA")  ));
+    icon.className = "fas fa-arrow-right";
+resultsTextContainer.appendChild(icon);
+    resultsTextContainer.appendChild(document.createTextNode(' ' + result.name + '. ' + 'Rating of ' + (result.rating ? result.rating : ' NA')));
     resultDisplayList.appendChild(resultsTextContainer);
 }
 

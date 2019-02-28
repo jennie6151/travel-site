@@ -2,13 +2,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color:#2e3532;
+    background-color: #2e3532;
 }
 
 .header {
     background-color: #66d7d1;
     height: 300px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .mainTitle {
@@ -19,92 +19,92 @@ body {
 
 @media screen and (max-width: 768px) {
     .mainTitle {
-    font-size: 30px;
+        font-size: 30px;
     }
 }
 
 /**---------------- Search ---------------**/
+
 #findAccommodation {
     text-align: left;
     font-size: 16px;
     z-index: 5;
-    color:#66d7d1;
+    color: #66d7d1;
 }
 
 @media screen and (min-width: 992px) {
     #findAccommodation {
-    font-size: 26px;
+        font-size: 26px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     #findAccommodation {
-    font-size: 30px;
+        font-size: 30px;
     }
 }
 
 #locationField {
-    width: 120px;
-    height: 25px;
-    left: 108px;
     top: 0px;
     z-index: 5;
+    border-radius:4px;
+    border-color: transparent;
     background-color: #f0f0f0;
-      }
-      
+}
+
 @media screen and (min-width: 992px) {
     #locationField {
-    font-size: 26px;
-    width:250px;
+        font-size: 26px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     #locationField {
-    font-size: 24px;
-    width:480px;
+        font-size: 24px;
     }
 }
 
-.locationInput{
-    width: 480px;
-    height: 50px;
-    left: 108px;
+.locationInput {
     background-color: #f0f0f0;
+    border-radius:4px;
+    border-color: transparent;
 }
 
 #controls {
-    position: absolute;
-    left: 300px;
-    width: 140px;
     top: 0px;
     z-index: 5;
     background-color: #f0f0f0;
+    border-radius:4px;
+    height:100%;
 }
-    
+
 #autocomplete {
     width: 100%;
+    height:100%;
 }
 
 #country {
     width: 100%;
+    border-radius: 4px;
+    height:100%;
 }
 
 
-.typeSelector{
+.typeSelector {
     color: #bada55;
     font-size: 20px;
     font-weight: normal;
     padding-right: 30px;
     margin: 10px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
-.typeSelectorTitle{
-    color:#bada55;
-    font-weight:normal;
+.typeSelectorTitle {
+    color: #bada55;
+    font-weight: normal;
 }
+
 /**---------------- Navbar ---------------**/
 
 ul.topnav {
@@ -113,7 +113,7 @@ ul.topnav {
     overflow: hidden;
     background-color: #2e3532;
     margin-bottom: 0px;
-    height:140px;
+    height: 140px;
 }
 
 ul.topnav li {
@@ -144,27 +144,32 @@ ul.topnav li.right {
 }
 
 @media screen and (max-width: 768px) {
-   ul.topnav{
-    height:100%;   
-         }
+    ul.topnav {
+        height: 100%;
     }
+}
 
 #googleMap {
     width: 100%;
     height: 600px;
 }
 
-.placesResults{
-    margin:20px;
-    width: 98%;
-    height:600px;
-    overflow:auto;
-    color:#bada55;
+.placesResults {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #ffffff;
+    border-top: solid 2px #66d7d1;
+    border-bottom: solid 2px #66d7d1;
 }
 
-.emptySearchResults{
-    font-size:20px;
-    color:#2e3532;
+#searchResults li {
+    margin: 10px;
+}
+
+.emptySearchResults {
+    font-size: 20px;
+    color: #2e3532;
 }
 
 /**---------------- Footer ---------------**/
@@ -172,13 +177,13 @@ ul.topnav li.right {
 .page-footer {
     position: relative;
     background-color: #2e3532;
-    color: #66d7d1;
+    color: #bada55;
     min-height: 100%;
     padding-top: 30px;
     text-align: center;
     left: 0;
     bottom: 0;
     width: 100%;
-    font-size:20px;
-    margin:0px;
+    font-size: 20px;
+    margin: 0px;
 }
