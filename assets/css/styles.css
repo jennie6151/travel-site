@@ -80,6 +80,11 @@ body {
     cursor: pointer;
 }
 
+@media screen and (max-width: 992px) {
+.typeSelector {
+   width:100%;
+}
+}
 
 .typeSelectorTitle {
     color: #bada55;
@@ -147,6 +152,7 @@ ul.topnav li.right {
 #searchResults li {
     margin: 10px;
     cursor: pointer;
+    list-style: none;
 }
 
 .emptySearchResults {

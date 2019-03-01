@@ -27,10 +27,10 @@ This website is motivated by the brief provided by [The Code Institute](https://
 * Find tourist attractions
 * Find accommodation
 * Find bars and restaurants
-* I also added travel as a filter option as I felt this was an essential feature on a travel site.
+* I also added travel as a filter option as I felt this was an enhancing feature on a travel site.
 
 ### How does it work?
-This website uses the **Google Maps api** and the **Google Places api** allowing users to search for a holiday destination.
+This website uses the **Google Maps api** and the **Google Places api** allowing users to search for their travel needs.
 
 The site uses plain **HTML** and **CSS** to route users to search and filter destinations which, depending on their search style, controls which **JavaScript** to execute.
 
@@ -46,11 +46,10 @@ Clone this repo to your local machine using [https://github.com/jennie6151/trave
 
 <a name="features"></a>
 ## Features
-### Existing features
 * Eye catching index page
 * Large easy to see and use search box
 * Large Google map - filling lower half of index page so site purpose is evident immediately
-* Clear search results using Bootstrap button info class
+* Clear search results
 
 ### Features left to implement
 * None
@@ -71,12 +70,12 @@ Clone this repo to your local machine using [https://github.com/jennie6151/trave
 * [Google places api](https://developers.google.com/places/web-service/intro)
 * [Github](https://github.com/)
     * Platform used to host my versioning
-* Other resources used: [Fontawesome](https://fontawesome.com/), [Googlefonts](https://fonts.google.com/)
+* Other resources used: [Fontawesome v5.7.2](https://fontawesome.com/), [Googlefonts](https://fonts.google.com/)
 
 <a name="testing"></a>
 ## Testing
 * HTML code checked via a [HTML code validator](https://validator.w3.org/)
-* CSS code checked via a [CSS code validator](https://jigsaw.w3.org/css-validator/validator)
+* CSS code checked via a [CSS code validator](https://jigsaw.w3.org/css-validator/)
 * Asked colleagues, friends and family to check this site and access from their own devices; any small changes were made and committed.
 * Used a [website response tool](https://www.responsinator.com) to test how well the website responded to different device sizes.
 *  Checked every feature worked (and looked consistent) in:
@@ -94,7 +93,6 @@ I used **Git** for versioning on this project.
 ## Acknowledgments/credits
 * *Antonija Šimić* - mentor.
 * *Paul Lewis* - colleague (Software Developer) who tested my finished site.
-* Various family and friends - tested the site on multiple devices.
 * Used the Google Maps Platform Documentation throughout the project for reference
 
 #### *MIT © 2019 Jennifer Dick*
