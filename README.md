@@ -96,6 +96,14 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
     * Opera
 *  Used incognito mode on **Google Chrome** to remove all cached data.
 
+## User stories as part of testing
+As a user I want to...
+1. search 'Bath' and find Accommodation. Test performed and true.
+2. search 'Bath' and find Accommodation and click on a result and it highlight on the map. Test performed and true.
+3. search 'Bath' and find Accommodation and then change type to Restaurants and my search to be updated. Test performed and true.
+4. search 'Bath' and find Accommodation and then type 'Bristol' and my search to be updated. Test performed and true.
+5. search 'Sutterby' and find no results for any search. Test performed and true.
+
 <a name="version"></a>
 ## Versioning
 I used **Git** for versioning on this project. And hosted this on Github.
