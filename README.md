@@ -42,7 +42,18 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
 
 <a name="deploy"></a>
 ## Deployment
-Clone this repo to your local machine using [https://github.com/jennie6151/travel-site]()
+1. Enable GitHub Pages on GitHub settings.
+2. Select Master Branch
+3. GitHub URL is then produced. Copy this.
+4. If deploying to own infrastructure replace api key with your own on index.html.
+5. Add copied URL to Google API Console. Both the Google Maps and Google Places API need to be enabled.
+5.1 Go to Google Cloud Platform Console
+5.2 Select project
+5.3 Select 'APIs'
+5.4 Select API under 'Enabled APIs'
+5.5 Select 'Credentials'
+5.6 Select relevent API key
+5.7 Scroll to 'Accept requests from these HTTP referrers (web sites)' and add copied URL.
 
 <a name="features"></a>
 ## Features
@@ -87,7 +98,7 @@ Clone this repo to your local machine using [https://github.com/jennie6151/trave
 
 <a name="version"></a>
 ## Versioning
-I used **Git** for versioning on this project.
+I used **Git** for versioning on this project. And hosted this on Github.
 
 <a name="credits"></a>
 ## Acknowledgments/credits

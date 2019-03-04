@@ -179,15 +179,15 @@ function showInfoWindow() {
 function addResult(result, i) {
     var resultDisplayList = document.getElementById('searchResults');
     var resultsTextContainer = document.createElement('li');
-    
+
     resultsTextContainer.onclick = function() {
-          google.maps.event.trigger(markers[i], 'click');
-        };
-    
+        google.maps.event.trigger(markers[i], 'click');
+    };
+
     var icon = document.createElement("i");
 
     icon.className = "fas fa-map-marker-alt";
-resultsTextContainer.appendChild(icon);
+    resultsTextContainer.appendChild(icon);
     resultsTextContainer.appendChild(document.createTextNode(' ' + result.name + '. ' + 'Rating of ' + (result.rating ? result.rating : ' NA')));
     resultDisplayList.appendChild(resultsTextContainer);
 }
@@ -210,7 +210,9 @@ function clearResults() {
 
 function dropMarker(i) {
     return function() {
-        markers[i].setMap(map);
+        if (markers[i]) {
+            markers[i].setMap(map);
+        }
     };
 }
 
